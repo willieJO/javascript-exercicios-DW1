@@ -15,14 +15,14 @@
 </body>
 <script>
     $("#calcular").click(function() {
-        var a = 0, b = 1, soma = 0;
-        while (b <= 50000) {
-            if (b % 2 === 0) {
-                soma += b;
+        var fib = [0,1]
+        var soma = 0;
+        while (fib[fib.length -1] <= 50000) {
+            var next = fib[fib.length -1] + fib[fib.length - 2];
+            if (next % 2 === 0) {
+                soma += next
             }
-            var c = a + b;
-            a = b;
-            b = c;
+            fib.push(next);
         }
         $("#resultado").text(soma);
     });
