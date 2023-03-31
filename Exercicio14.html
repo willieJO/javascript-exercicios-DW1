@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Operação de Potenciação</h1>
+    <p>Base: 2</p>
+    <p>Expoente: 8</p>
+    
+</body>
+<script>
+    $(document).ready(function(){
+        let base = 2;
+        let expoente = 8;
+        let resultado = 1;
+        let passos = "<p>" + base + "<sup>0</sup> = 1</p>";
+        for (let i = 1; i <= expoente; i++) {
+          resultado *= base;
+          passos += "<p>" + base + "<sup>" + i + "</sup> = " + resultado + "</p>";
+        }
+        $("body").append(passos);
+      });
+</script>
+</html>

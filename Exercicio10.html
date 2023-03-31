@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 5px;
+			text-align: center;
+		}
+		.primo {
+			background-color: rgb(26, 195, 211);
+            font-weight: bold;
+		}
+	</style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tabela de Números Primos</h1>
+	<table id="tabela">
+        <thead>
+			<tr>
+				<th>Número</th>
+				<th>Primo?</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>0</td>
+				<td>Não</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Não</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<script>
+    $(document).ready(function() {
+        for (let num = 2; num <= 200; num++) {
+            let isPrimo = true;
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    isPrimo = false;
+                    break;
+                }
+            }
+            if (isPrimo) {
+                $('tbody').append(`<tr><td class="primo">${num}</td><td>Sim</td></tr>`);
+            } else {
+                $('tbody').append(`<tr><td>${num}</td><td>Não</td></tr>`);
+            }
+        }
+    });
+</script>
+</html>

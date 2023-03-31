@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <label for="input">Digite a sequência de caracteres:</label>
+    <input type="text" id="input">
+    <button id="ordenar">Ordenar</button>
+    <p id="sequencia-original"></p>
+    <p id="sequencia-ordenada"></p>
+</body>
+<script>
+    $("#ordenar").click(function() {
+      var sequencia = $("#input").val();
+      var array_sequencia = sequencia.split("");
+      array_sequencia.sort();
+      var sequencia_ordenada = array_sequencia.join("");
+      $("#sequencia-original").text("Sequência original: " + sequencia);
+      $("#sequencia-ordenada").text("Sequência ordenada: " + sequencia_ordenada);
+    });
+      
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <label for="a">Digite o valor de a:</label>
+	<input type="number" id="a"><br>
+
+	<label for="b">Digite o valor de b:</label>
+	<input type="number" id="b"><br>
+
+	<label for="c">Digite o valor de c:</label>
+	<input type="number" id="c"><br>
+
+	<button id="calcular">Calcular Delta</button>
+
+	<div id="passos"></div>
+	<div id="resultado"></div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#calcular").click(function(){
+            var a = parseFloat($("#a").val());
+            var b = parseFloat($("#b").val());
+            var c = parseFloat($("#c").val());
+            var delta = Math.pow(b, 2) - 4 * a * c;
+            $("#passos").html("Δ = b² - 4ac<br>Δ = " + b + "² - 4*" + a + "*" + c + "<br>Δ = " + delta);
+            $("#resultado").html("O valor de Δ é: " + delta);
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+	<form id="form">
+        <label for="base">Base:</label>
+        <input type="number" id="base" name="base" required>
+        <label for="expoente">Expoente:</label>
+        <input type="number" id="expoente" name="expoente" required>
+        <button type="submit">Calcular</button>
+      </form>
+      <div id="resultado"></div>
+</body>
+<script>
+    $(document).ready(function() {
+        $('#form').submit(function(event) {
+          event.preventDefault();
+          var base = parseInt($('#base').val());
+          var expoente = parseInt($('#expoente').val());
+          var potencia = 1;
+          for (var i = 0; i < expoente; i++) {
+            potencia *= base;
+          }
+          $('#resultado').text(base + " elevado a " + expoente + " é igual a " + potencia);
+        });
+      });
+</script>
+</html>
